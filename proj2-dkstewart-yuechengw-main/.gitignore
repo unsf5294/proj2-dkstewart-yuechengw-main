@@ -1,0 +1,6 @@
+fetchmail
+*.o
+*.d
+
+.vscode
+COMP30023_2024_Project2-release.pdf

@@ -1,0 +1,29 @@
+X-COMP30023: "€"
+From: nul@comp30023
+Date: Wed, 08 May 2024 20:06:37 +1100
+Subject: Aren't NUL bytes fun?
+To: nul@comp30023
+Content-Type: text/plain
+
+extension-field =
+            <Any field which is defined in a document
+            published as a formal extension to this
+            specification; none will have names beginning
+            with the string "X-">
+field       =  field-name ":" [ field-body ] CRLF
+field-body  =  field-body-contents
+            [CRLF LWSP-char field-body]
+field-body-contents =
+            <the ASCII characters making up the field-body, as
+            defined in the following sections, and consisting
+            of combinations of atom, quoted-string, and
+            specials tokens, or else consisting of texts>
+quoted-string = <"> *(qtext/quoted-pair) <">; Regular qtext or
+                                            ;   quoted chars.
+qtext       =  <any CHAR excepting <">,     ; => may be folded
+                "\" & CR, and including
+                linear-white-space>
+
+References:
+RFC 822
+RFC 2049
